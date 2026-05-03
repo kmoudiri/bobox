@@ -1,0 +1,23 @@
+
+group = 'org.sample'
+version = '0.1'
+
+ext {
+    javaVersion = JavaLanguageVersion.of(21)
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+     if (it.plugins.findPlugin(JavaPlugin.class)) {
+         java {
+             toolchain {
+                 languageVersion = javaVersion
+             }
+         }
+     }
+}
