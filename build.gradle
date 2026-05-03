@@ -1,5 +1,5 @@
 
-group = 'org.sample'
+group = 'org.bobox'
 version = '0.1'
 
 ext {
@@ -10,14 +10,4 @@ allprojects {
     repositories {
         mavenCentral()
     }
-}
-
-subprojects {
-     if (it.plugins.findPlugin(JavaPlugin.class)) {
-         java {
-             toolchain {
-                 languageVersion = javaVersion
-             }
-         }
-     }
 }
